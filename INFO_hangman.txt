@@ -1,9 +1,0 @@
-- IGRA VJEŠALA (HANGMAN)
-
-Pravila igre: 
-
-- pita ga oće li slovo ili pogađat
-- korisnik unosi slovo po slovo dok ne istroši živote ili pogodi
-- provjeri jel slovo u riječi, ako da pokaže di, ako ne popuni hangmana
-- baza podataka s riječima za pogađanje
-- random uzme riječ za igru [random broj, u fileu taj broj kao broj retka]
