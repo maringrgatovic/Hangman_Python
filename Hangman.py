@@ -7,13 +7,18 @@ def random_word():
     """
 
     import random
-    f = open("D:\Python_code\Hangman\words.txt", "r")
+    f = open("words.txt", "r")
     words = f.readlines()
     chosen_word = random.choice(words)
     f.close()
-    return complete_word
+    return chosen_word[:-1]             # This is to avoid '\n' that comes with the word
 
-def draw(c, right_word):
+def draw(c):
+    """Shows the part of a hangman picture depending on the remaining lives.
+
+    Arguments:
+        c (int) - number of remaining player lives 
+    """
     print()
     if c == 6:
         print("-------")
@@ -48,6 +53,16 @@ def draw(c, right_word):
     print()
 
 def lines_to_letters(letter, word, changed_word):
+    """Adds the correct letter to the lines representation of a word (e.g. _ B _ A _)
+
+    Arguments:
+        letter (str): letter to be added
+        word (str): correct word that is being guessed
+        changed_word (str): correct word presented with lines and letters guessed correctly
+
+    Return value:
+        changed_word (str): lines representation of a correct word but with added letter
+    """
 
     L = list(changed_word.replace(" ", ""))
 
@@ -79,7 +94,7 @@ while(lives > 0):
         elif(guess != right_word):
             print("Wrong word!")
             lives = lives - 1
-            draw(lives, right_word)
+            draw(lives)
             
     elif(len(guess) == 1):
 
@@ -97,7 +112,7 @@ while(lives > 0):
             list_of_tried_letters.append(guess)
             print("Wrong letter!")
             lives = lives - 1
-            draw(lives, right_word)  
+            draw(lives)  
 
 print(f"The word was {right_word}")
 
