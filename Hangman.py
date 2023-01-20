@@ -49,7 +49,7 @@ def draw(c):
         print("--/|\--")
         print("--/-\--")
         print()
-        print("Loser, you lost! Better luck next time")
+        print("You lost!!! Better luck next time")
     print()
 
 def lines_to_letters(letter, word, changed_word):
